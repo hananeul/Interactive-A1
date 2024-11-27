@@ -1,0 +1,547 @@
+@import url('https://hangeul.pstatic.net/hangeul_static/css/NanumDaHaengCe.css'); 
+@import url('https://fonts.cdnfonts.com/css/hello-bonia-serif');               
+@import url('https://fonts.cdnfonts.com/css/aleo-2');
+                
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Horizontal scroll prevention */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Hello Bonia Serif', sans-serif;                         
+  margin: 0;
+  padding: 0;
+  background-color: #03021A;
+  color: white;
+  text-align: center;
+  line-height: 3;
+  font-size: 18px;
+}
+
+header {
+  position: relative;
+  background-color: #03021A;
+  padding: 50px 0;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Don't let the star get out of the header zone */
+}
+
+/* Starry Header : backgorund star */
+.starry-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Don't let the stars get in the way of the click */
+  z-index: 0;
+}
+
+/* background star */
+.headerStar {
+  position: absolute;
+  width: 2px !important; 
+  height: 2px !important;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* star position and timing */
+.headerStar:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.headerStar:nth-child(2) { top: 30%; left: 50%; animation-delay: 0.5s; }
+.headerStar:nth-child(3) { top: 70%; left: 80%; animation-delay: 1s; }
+.headerStar:nth-child(4) { top: 50%; left: 20%; animation-delay: 1.5s; }
+.headerStar:nth-child(5) { top: 20%; left: 70%; animation-delay: 2s; }
+.headerStar:nth-child(6) { top: 15%; left: 40%; animation-delay: 0.8s; }
+.headerStar:nth-child(7) { top: 60%; left: 10%; animation-delay: 1.2s; }
+.headerStar:nth-child(8) { top: 25%; left: 60%; animation-delay: 1.7s; }
+.headerStar:nth-child(9) { top: 40%; left: 30%; animation-delay: 2.3s; }
+.headerStar:nth-child(10) { top: 75%; left: 90%; animation-delay: 1.9s; }
+
+/* background star animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+header h1 {
+  text-align: center;
+  color: #f6f7d3;
+  font-size: 60px;
+  padding-top: 300px;
+  animation: fadeIn 3s ease-in forwards; 
+  font-family: 'Hello Bonia Serif', sans-serif;                                
+}
+
+header h2 {
+  text-align: center;
+  color: #f6f7d3;
+  font-size: 30px;
+  padding-top: 10px;
+  animation: fadeInScale 3s ease-in-out forwards; 
+  font-family: 'Hello Bonia Serif', sans-serif;
+}
+
+/* moon setting */
+.scroll-to-top {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 70px; 
+  height: 70px;
+  cursor: pointer;
+  z-index: 1000; /* front */
+}
+
+/* moon size  */
+.scroll-to-top img {
+  width: 100%; 
+  height: auto;
+  display: block; /* Remove unnecessary margins */
+}
+
+p {
+  font-family: 'Aleo', sans-serif;
+}
+
+/*=============== SECTION 1 ================= */
+.page1 {
+  line-height: 3;
+  padding-top: 350px;
+  text-align: left;
+  position: relative;
+  margin-left: 150px;
+}
+
+.hidden-checkbox {
+  display: none; /* hind checkbox */
+}
+
+/* trigger for text */
+.click-trigger {
+  cursor: pointer; /*clickable*/
+  display: inline-block; /*Can be placed side by side in a row and resized*/
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  font-family: 'Aleo', sans-serif;
+  transition: background-color 1s ease, color 1s ease; 
+}
+
+.click-trigger:hover {
+  background-color: #ebeb75; 
+  color: rgb(0, 0, 0); 
+}
+
+.image-container {
+  display: none;
+  position: absolute; 
+  top: 300px; 
+  left: 0; /* Fixed to the left */
+}
+
+.image-container img {
+  width: 1500px;
+  max-width: 200%; /* don't go over the screen */
+  height: auto; 
+}
+
+/* View images when the checkbox is selected */
+.hidden-checkbox:checked + .click-trigger + .image-container {
+  display: block; /* show image */
+}
+
+.page1 p {
+  opacity: 0; /* Not visible at first */
+  animation: fadeIn 2s ease-in-out forwards; 
+}
+
+.page1 p:nth-of-type(1) {
+  animation-delay: 4s;
+  font-size: 18px !important;
+  text-align: left;
+}
+
+.page1 p:nth-of-type(2) {
+  animation-delay: 6s;
+  font-size: 18px !important; 
+}
+
+/*=============== SECTION 2 ================= */
+.page2 {
+  position: relative;
+  padding-top: 400px;
+  font-size: 18px !important;
+  font-family: 'Aleo', sans-serif;
+}
+
+.page2 p:first-of-type {
+  font-size: 18px;
+  text-align: center; 
+}
+
+.page2 p {
+  margin: 5px 0; 
+  line-height: 1.4; 
+}
+
+.star-container {
+  position: absolute; 
+}
+
+/* PointStar */
+.pointStar2 {
+  width: 50px; 
+  height: auto;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+.constellation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px; 
+  height: auto;
+  opacity: 0;
+  visibility: hidden; /* Set it to be invisible to the screen in initial state */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.constellation[alt="Loving Star"] {
+  width: 350px;
+}
+
+.constellation[alt="Memories Star"] {
+  width: 150px; 
+}
+
+.constellation[alt="Longing Star"] {
+  width: 400px;
+  top: -80px;
+  left: -50px;
+}
+
+.constellation[alt="Mother Star"] {
+  width: 200px;
+  top: -100px;
+  right: -100px;
+}
+
+/* hover */
+.star-container:hover .constellation {
+  opacity: 1;
+  visibility: visible; /* Display images on screen */
+}
+
+/*=============== SECTION 3 ================= */
+.page3 {
+  padding-top: 450px;
+  position: relative;
+  text-align: center;
+}
+
+.page3 p:first-of-type {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.star-container {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.top-stars {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.bottom-stars {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.star {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    z-index: 1; 
+}
+
+.pointStar3 {
+    position: absolute;
+    width: 50px !important;
+    height: auto;
+}
+
+.word-1 { top: 0; left: 0px; }
+.word-2 { top: 50px; left: 10px; }
+.word-3 { top: 120px; left: 30px; }
+.word-4 { top: 30px; right: 15px; }
+.word-5 { top: 100px; right: 25px; }
+.word-6 { top: 180px; right: 5px; }
+
+.letter {
+    font-family: 'Aleo', sans-serif;
+    font-size: 18px;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0%, 50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.delay-1 { 
+  animation-delay: 20s; 
+  font-family: 'NanumDaHaengCe';
+}
+.delay-2 { animation-delay: 21s; 
+  font-family: 'NanumDaHaengCe';
+}
+.delay-3 { animation-delay: 22s; 
+  font-family: 'NanumDaHaengCe';
+}
+.delay-4 { animation-delay: 23s; 
+  font-family: 'NanumDaHaengCe';
+}
+.delay-5 { animation-delay: 24s; 
+  font-family: 'NanumDaHaengCe';
+}
+.delay-6 { animation-delay: 25s; 
+  font-family: 'NanumDaHaengCe';
+}
+
+.description {
+    font-family: 'Aleo', sans-serif;
+    opacity: 0;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out; 
+    z-index: 2; 
+}
+
+.star:hover .description {
+    opacity: 1 !important;
+}
+
+.pointStar3 {
+    position: absolute;
+    width: 30px;
+    height: auto;
+}
+/*=============== SECTION 4 ================= */
+
+.hidden-checkbox2 {
+  display: none;
+}
+
+.page4 {
+  padding-top: 600px;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  opacity: 1; 
+  transition: opacity 3s ease-in-out; 
+}
+
+.click-trigger2 {
+  cursor: pointer;
+  color: white;
+  background-color: #03021A;
+  font-size: 18px;
+  font-family: 'Aleo', sans-serif;
+  transition: color 2s ease;
+}
+
+.click-trigger2:hover {
+  color: #03021A;
+  background-color: #03021A;
+}
+
+/*=============== SECTION 5 ================= */
+
+.page5 {
+  line-height: 2;
+  padding-top: 700px;
+  position: relative;
+}
+
+.motherDisappear {
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1); /* first : brfore animation */
+  transition: transform 3s ease-in-out;
+  animation: moveAndShrink 5s ease-in-out forwards;
+  animation-delay: 32s;
+  opacity: 1;
+}
+
+@keyframes moveAndShrink {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  20% {opacity: 1;}
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -150%) scale(0); /* move to the top and become smaller */
+  }
+}
+
+/*=============== SECTION 6 ================= */
+
+.hidden-checkbox3 {
+  display: none;
+}
+
+.page6 {
+  margin-top: 800px;
+}
+
+.page6 p {
+    margin-top: -100px; 
+    margin-bottom: 0; 
+    font-size: 18px;
+}
+
+.hisName {
+  font-family: 'NanumDaHaengCe', sans-serif; 
+  white-space: nowrap; 
+  display: inline-block;
+  font-size: 200px !important;
+  position: relative;
+  color: white; 
+  transition: clip-path 0.3s ease-in-out;
+}
+
+/* when click the box (trigger), the animation starts */
+.hidden-checkbox3:checked + .clickable-hisName .hisName {
+  animation: disappearRight 3s ease-in-out forwards;
+}
+
+@keyframes disappearRight {
+  0% {
+    clip-path: inset(0 0 0 0); 
+  }
+  100% {
+    clip-path: inset(0 100% 0 0); /* Gone as the right side of the text is completely cut off */
+  }
+}
+
+.clickable-hisName {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/*=============== SECTION 7 ================== */
+.page7 {
+  padding-top: 500px;
+  position: relative;
+  font-size: 18px;
+}
+
+.page7 p {
+  line-height: 3;
+  font-size: 18px;
+  text-align: right;
+  padding-right: 200px;
+}
+
+.bird {
+  position: absolute;
+  top: 40%; 
+  left: 80%; 
+  width: 150px; 
+  height: auto;
+  animation: flyBird 10s ease-in-out infinite; 
+  animation-play-state: running;
+  z-index: 1;
+}
+
+.bird:hover {
+  animation-play-state: paused; 
+}
+
+@keyframes flyBird {
+  0% {
+    left: 80%; 
+    top: 80%; 
+  }
+  25% {
+    top: 55%; 
+  }
+  50% {
+    left: 40%; 
+    top: 100%;
+  }
+  60% {
+    top: 110%; 
+  }
+  75% {
+    top: 40%; 
+  }
+  100% {
+    left: 0;
+    top: 60%; 
+  }
+}
+
+/*=============== SECTION 8 ================= */
+.page8 {
+  padding-top: 650px;
+  padding-bottom: 300px;
+  position: relative;
+  text-align: center;
+  background-image: url('assets/spring.png'); 
+  background-size: cover;
+  background-position: center;
+  font-size: 18px;
+}
+
+.page8 p {
+  margin-top: -50px; 
+  line-height: 3;
+  font-size: 18px;
+}
+
+.flower {
+  position: absolute;
+  bottom: 10px; 
+  left: 1px;
+  width: 100%; 
+  height: auto; 
+  opacity: 0;
+  transition: opacity 3s ease-in-out; 
+}
+
+.page8:hover .flower {
+  opacity: 1;
+}
